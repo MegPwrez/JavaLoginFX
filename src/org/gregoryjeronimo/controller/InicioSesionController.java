@@ -1,10 +1,6 @@
 package org.gregoryjeronimo.controller;
 
 import java.io.IOException;
-import org.gregoryjeronimo.dao.UsuarioDAO;
-import org.gregoryjeronimo.model.Usuario;
-
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -13,11 +9,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.gregoryjeronimo.dao.UsuarioDAO;
+import org.gregoryjeronimo.model.Usuario;
 import org.gregoryjeronimo.util.SecurityUtil;
 
 public class InicioSesionController implements Initializable {
@@ -37,8 +35,6 @@ public class InicioSesionController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         usuarioDAO = new UsuarioDAO();
         lblMensaje.setText("");
-        //btnIniciarSesion.setOnAction(e -> eventoInicioSesion());
-
     }
 
     @FXML
@@ -46,18 +42,15 @@ public class InicioSesionController implements Initializable {
         String usuario = txtUsuario.getText();
         String password = txtPassword.getText();
 
-        //verificación si los datos estan vacios
         if (usuario.isEmpty() || password.isEmpty()) {
             lblMensaje.setText("Por favor, complete todos sus datos.");
             return;
         }
-        //Datos completos
+
         String passwordHash = SecurityUtil.hashSHA256(password);
-        //llamar al dato para iniciar sesion
         Usuario usuarioIniciado = usuarioDAO.iniciarSesion(usuario, passwordHash);
-        // ! =
+
         if (usuarioIniciado != null) {
-            //lblMensaje.setStyle("-fx-background-color: #60682e;");
             lblMensaje.setText("Inicio correcto");
             abrirDashboard(usuarioIniciado);
         } else {
@@ -75,33 +68,48 @@ public class InicioSesionController implements Initializable {
                 tituloDashboard = "Panel de Administración";
                 break;
             case "empleado":
- rutaFXML = "/org/gregoryjeronimo/view/EmpleadoDashboradView.fxml";
+                rutaFXML = "/org/gregoryjeronimo/view/EmpleadoDashboradView.fxml";
                 tituloDashboard = "Panel de Empleado";
                 break;
-    case "cajero":
- rutaFXML = "/org/gregoryjeronimo/view/CajeroDashboradController";
+            case "cajero":
+                rutaFXML = "/org/gregoryjeronimo/view/CajeroDashboardView.fxml";
                 tituloDashboard = "Panel de Cajero";
                 break;
+            default:
+                lblMensaje.setText("Rol no reconocido");
+                return;
         }
+
         try {
             FXMLLoader cargadorFXML = new FXMLLoader(getClass().getResource(rutaFXML));
             Parent raiz = cargadorFXML.load();
-            
-            AdminDashboradController controlado = cargadorFXML.getController();
-            controlado.iniciarUsuario(usuario);            
-            
+
+            switch (usuario.getRol().toLowerCase()) {
+                case "admin":
+                    AdminDashboradController adminCtrl = cargadorFXML.getController();
+                    adminCtrl.iniciarUsuario(usuario);
+                    break;
+                case "empleado":
+                    EmpleadoDashboradController empCtrl = cargadorFXML.getController();
+                    empCtrl.iniciarUsuario(usuario);
+                    break;
+                case "cajero":
+                    CajeroDashboradController cajeroCtrl = cargadorFXML.getController();
+                    cajeroCtrl.iniciarUsuario(usuario);
+                    break;
+            }
+
             Stage escenario = new Stage();
             escenario.setScene(new Scene(raiz));
             escenario.setTitle(tituloDashboard);
             escenario.show();
-            
+
             Stage escenaActual = (Stage) btnIniciarSesion.getScene().getWindow();
             escenaActual.close();
-            
+
         } catch (IOException e) {
-            System.err.println("Error al cargar la vista:" + rutaFXML+ e.getMessage());
-            lblMensaje.setText("Error interno");
+            System.err.println("Error al cargar la vista: " + rutaFXML + " | " + e.getMessage());
+            lblMensaje.setText("Error interno al cargar la vista");
         }
     }
-
 }

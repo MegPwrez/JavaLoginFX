@@ -1,31 +1,18 @@
 package org.gregoryjeronimo.model;
 
-//POJO: Nombre, atributos de clase, constructores, metodos(get y set) otros...
-//encapssulación, herencia, polimorfismo, abstractión
 public class Usuario {
-    //id,nombre, rol
     private int id;
     private String username;
+    private String password;
     private String rol;
 
     public Usuario() {
     }
 
+    
     public Usuario(int id, String username, String rol) {
         this.id = id;
         this.username = username;
-        this.rol = rol;
-    }
-
-    public Usuario(String admin, String admin123, String gregory_Pérez, String admin0) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
         this.rol = rol;
     }
 
@@ -45,10 +32,19 @@ public class Usuario {
         this.username = username;
     }
 
-    public Object getPassword() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String getPassword() {
+        return password;
     }
-    
-    
-           
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }

@@ -4,11 +4,22 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/Principal.java</file>
-            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/style/InicioSesionViewController.java</file>
-            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/view/InicioSesionView.fxml</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/build.xml</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/controller/AdminDashboradController.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/controller/InicioSesionController.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/dao/UsuarioDAO.java</file>
             <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/model/Usuario.java</file>
             <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/util/Conexion.java</file>
-            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/util/SegurityUtil.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/util/SecurityUtil.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/view/InicioSesionView.fxml</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/view/AdminDashboradView.fxml</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/view/EmpleadoDashboradView.fxml</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/controller/EmpleadoDashboradController.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/view/style/empleadodashboradview.css</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/view/style/admindashboradview.css</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/controller/CajeroDashboradController.java</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/view/style/cajerodashborad.css</file>
+            <file>file:/C:/gregory_jeronimo/bimestre_3/siete/JavaLoginFX/src/org/gregoryjeronimo/view/CajeroDashboard.fxml</file>
         </group>
     </open-files>
 </project-private>

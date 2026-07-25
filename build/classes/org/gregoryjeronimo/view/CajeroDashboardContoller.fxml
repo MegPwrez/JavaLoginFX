@@ -13,7 +13,7 @@
   </stylesheets>
    <children>
       <Label fx:id="lblBienvenida" layoutX="441.0" layoutY="43.0" text="Bienvenida(o)" />
-      <Button layoutX="50.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="btnSalir" />
+      <Button layoutX="50.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Salir" />
       <Label layoutX="251.0" layoutY="192.0" text="CAJERO" />
    </children>
 </AnchorPane>

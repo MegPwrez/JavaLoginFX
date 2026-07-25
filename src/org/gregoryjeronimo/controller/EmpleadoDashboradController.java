@@ -1,26 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package org.gregoryjeronimo.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import org.gregoryjeronimo.model.Usuario;
 
-/**
- * FXML Controller class
- *
- * @author Amanda Pérez
- */
 public class EmpleadoDashboradController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private Label lblBienvenida; 
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+     
     }    
-    
+
+   
+    public void iniciarUsuario(Usuario usuario) {
+       
+        
+     
+        if (usuario != null && lblBienvenida != null) {
+            lblBienvenida.setText("Bienvenida(o) " + usuario.getUsername());
+        }
+    }
 }
