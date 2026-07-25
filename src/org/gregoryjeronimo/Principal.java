@@ -14,6 +14,7 @@ public class Principal extends Application {
 
         Parent raiz = FXMLLoader.load(
                 getClass().getResource("/org/gregoryjeronimo/view/InicioSesionView.fxml"));
+       
 
         Scene escena = new Scene(raiz);
 

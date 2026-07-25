@@ -17,6 +17,10 @@ public class Usuario {
         this.rol = rol;
     }
 
+    public Usuario(String admin, String admin123, String gregory_Pérez, String admin0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public String getRol() {
         return rol;
     }
@@ -39,6 +43,10 @@ public class Usuario {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Object getPassword() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     
